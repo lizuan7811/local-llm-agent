@@ -22,7 +22,7 @@ A high-performance, modular C++20 AI Agent and LLM execution framework designed 
 ## 🛠️ System Architecture
 
 ### Core Components
-main
+```main
 ├─ ConfigManager ─ EnvironConfig
 ├─ LogManager
 ├─ PromptManager ──────────► System Prompt (Dynamic / Reloadable)
@@ -39,6 +39,7 @@ main
 │                         Olm     Gemini   list read write run_cmd
 │                                                  └ WorkspaceSandbox
 └─ AIResponseHandler ─► FallbackParser (Handles non-tool outputs)
+```
 
 ### Execution Flow & Strategy
 ModelRouter -> call AI get Strategy -> AI Strategy -> ModelAdapter -> Service implement to call Model for result
