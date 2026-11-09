@@ -1,7 +1,3 @@
-[GitHub Repo Description]
-A high-performance C++20 AI Agent framework featuring local LLM integration (Ollama/Gemini), ReAct reasoning loops, dynamic model routing, and sandboxed tool execution.
-
-[README.md Content]
 # C++20 Local AI Agent Framework
 
 A high-performance, modular C++20 AI Agent and LLM execution framework designed for local intelligence, secure tool invocation, and multi-step reasoning workflows (powered by Ollama / Gemini).
