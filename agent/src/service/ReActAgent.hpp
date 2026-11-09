@@ -1,0 +1,13 @@
+//
+// Created by root on 2026/10/22.
+//
+
+#ifndef LIYONG_OLLAMA_AGENT_REACTAGENT_HPP
+#define LIYONG_OLLAMA_AGENT_REACTAGENT_HPP
+
+
+class ReActAgent {
+};
+
+
+#endif //LIYONG_OLLAMA_AGENT_REACTAGENT_HPP

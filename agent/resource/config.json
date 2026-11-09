@@ -1,0 +1,82 @@
+{
+  "global": {
+    "log_level": "DEBUG",
+    "log_path": "logs/agent.log",
+    "time_format": "%Y-%m-%d_%H:%M:%S",
+    "log_pattern": "[%Y-%m-%d %H:%M:%S.%e] [%^%l%$] [t:%t] %v"
+  },
+  "mission": {
+    "prompts_dir_path": "prompts/",
+    "prompts_header_name": "PROJECT_HEADER_PROMPT.md",
+    "prompts_content_name": "PROJECT_CONTENT_PROMPT.md",
+    "work_dir_path": "workspace/",
+    "work_dir_name": ""
+  },
+  "control": {
+    "socket_path": "/tmp/liyong_agent_control.sock"
+  },
+  "grpc": {
+    "host": "0.0.0.0",
+    "port": 10001,
+    "worker_threads": 4,
+    "max_message_size": 4194304,
+    "keepalive": {
+      "enabled": true,
+      "time_ms": 30000,
+      "timeout_ms": 10000
+    },
+    "tls": {
+      "enabled": true,
+      "cert_file": "/etc/ollama-agent/tls/server.crt",
+      "key_file": "/etc/ollama-agent/tls/server.key",
+      "ca_file": "/etc/ollama-agent/tls/ca.crt",
+      "verify_client": true
+    }
+  },
+  "ollama_client": {
+    "url": "http://127.0.0.1:11434",
+    "api_path": {
+      "native": "/api/generate",
+      "compatibility": "/v1/chat/completions"
+    },
+    "model": "qwen2.5-coder:7b",
+    "connect_timeout_ms": 5000,
+    "request_timeout_ms": 600000,
+    "max_turns": 8,
+    "tern_delay_ms": 1000,
+    "keep_alive": "5m",
+    "stream": false,
+    "tls": {
+      "enabled": false,
+      "verify_certificate": true
+    }
+  },
+  "agent": {
+    "enabled": true,
+    "workspace": "/home/liyong/liyong_project/aiagent_project",
+    "max_iterations": 20,
+    "command_timeout_ms": 30000,
+    "permissions": {
+      "shell": true,
+      "file_read": true,
+      "file_write": true,
+      "file_delete": false,
+      "git": true
+    }
+  },
+  "ai_client": {
+    "gemini": {
+      "enable": true,
+      "model": "gemini-3.8-flash",
+      "base_url": "https://generativelanguage.googleapis.com",
+      "api_path": "/v1beta/models/{}:generateContent",
+      "api_key": "{apikey}",
+      "connect_timeout_ms": 5000,
+      "request_timeout_ms": 120000,
+      "max_retries": 3,
+      "retry_delay_ms": 1000,
+      "keep_alive": "5m",
+      "stream": false
+    }
+  }
+}

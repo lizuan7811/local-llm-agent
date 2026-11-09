@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package agent;
+
+service AgentService {
+  rpc Connect(stream AgentMessage) returns (stream ServerMessage);
+}
+
+message AgentMessage {
+  string agent_id = 1;
+  string payload  = 2;
+}
+
+message ServerMessage {
+  string command_id = 1;
+  string payload    = 2;
+}
